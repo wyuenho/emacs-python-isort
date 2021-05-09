@@ -35,7 +35,7 @@
 (require 'reformatter)
 
 (defgroup python-isort nil
-  "Python isort"
+  "Python isort."
   :group 'python
   :prefix "python-isort-")
 
