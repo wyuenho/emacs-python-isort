@@ -44,7 +44,7 @@
   :type 'string
   :group 'python-isort)
 
-(defcustom python-isort-arguments '("--stdout" "-")
+(defcustom python-isort-arguments '("--stdout" "--atomic" "-")
   "Arguments to `python-isort-command'."
   :type '(repeat string)
   :group 'python-isort)
