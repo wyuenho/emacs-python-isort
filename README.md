@@ -11,7 +11,7 @@ Reformat python-mode buffer with isort.
 
 ## Motivation
 
-There are 2 packages that integrates `isort` with Emacs -
+There are 2 other packages that integrate `isort` with Emacs -
 [py-isort](https://github.com/paetzke/py-isort.el) and
 [isortify](https://github.com/pythonic-emacs/isortify). Both of which have not
 been maintained for years and violate Emacs convention.
