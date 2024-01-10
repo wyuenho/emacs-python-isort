@@ -33,6 +33,7 @@
 ;;; Code:
 
 (require 'reformatter)
+(require 'projectile)
 
 (defgroup python-isort nil
   "Python isort."
@@ -49,12 +50,19 @@
   :type '(repeat string)
   :group 'python-isort)
 
+(defun python-isort-with-src ()
+  "Return `python-isort-arguments` with projectile root dir appended as src path."
+  (let ((root (projectile-project-root)))
+    (if root
+        (append python-isort-arguments (list "--src" root))
+      python-isort-arguments)))
+
 ;;;###autoload (autoload 'python-isort-buffer "python-isort" nil t)
 ;;;###autoload (autoload 'python-isort-region "python-isort" nil t)
 ;;;###autoload (autoload 'python-isort-on-save-mode "python-isort" nil t)
 (reformatter-define python-isort
   :program python-isort-command
-  :args python-isort-arguments)
+  :args (python-isort-with-src))
 
 (provide 'python-isort)
 ;;; python-isort.el ends here
